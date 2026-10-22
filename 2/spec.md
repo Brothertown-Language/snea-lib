@@ -117,15 +117,23 @@ R-2; validator-verified wording) — the library never treats them as ratified.
 | SC-L1 | The rule-data package resolves and loads: `snea_lib.derivation.rules` imports, every `rules/*.yaml` parses, the `.md` layer is absent from the package | structural | import test + file-manifest check |
 | SC-L2 | The conservative discipline holds mechanically: Law 13 never applies; Law 8 noted-not-applied; gap-marked environments flag-not-fill; unlisted Law-10 *i-context *k does not palatalize and flags | behavioral | pytest negative vectors |
 | SC-L3 | Word-edge laws hold at true word edges and hold+flag at hyphen boundaries; the stem-final vs suffix-final *r contrast resolves by the supplied parse (B1 → y as stem-level, B2 → š as word-final) | behavioral | pytest vectors (teeth-class vs suffix-class) |
-| SC-L4 | The forward engine reproduces recorded worked-derivation forms on parent-record-derived single-form fixtures (e.g., the Table 6 PA inputs: *wi·pitali, *wi·kiwa·Hmi, *sa·kima·wa, *-ali, *mete·hi, *neʔθwi, *elenyiwa, *menahanwi) | behavioral | pytest vectors generated from the recorded YAML, never hand-typed |
+| SC-L4 | The forward engine reproduces recorded worked-derivation forms on parent-record-derived single-form fixtures (e.g., the Table 6 PA inputs: *wi·pitali, *wi·kiwa·Hmi, *sa·kima·wa, *-ali, *mete·hi, *neʔθwi, *elenyiwa, *menahanwi) | behavioral | pytest vectors generated from the recorded YAML rows — each fixture cites its recorded row; a row recording only output form and law path (the inanim-pl row: paper Table 6; B2) yields a vector asserting the recorded elements |
 | SC-L5 | Composition produces the recorded parse and trace entries (final selected, allomorph taken, inflection attached, provenance flag) on unit fixtures | behavioral | pytest vectors |
 | SC-L6 | Inverse mechanics behave per the recorded reconciliations: merger→candidate-set inversion, intersection resolution, tie-breaker order, daughter-own gap-marking | behavioral | pytest vectors |
 | SC-L7 | `snea_lib.bl_ipa` output is identical to the parent's `src/bl_ipa.py` output over the parent's recorded test inputs at migration time | behavioral | parity run captured in the migration PR (consumer spec) |
 | SC-L8 | The conversion layer imports no `re` | structural | static check test |
 | SC-L9 | pytest, ruff, and pyright all green in this repo at the composed state | behavioral | command output |
+| SC-L10 | Law-10's *ē-branch holds: palatalization applies before PEA *ē unconditionally, and the application is recorded in the trace | behavioral | pytest vector exercising the recorded Law-10 rule data on a unit *k-before-ē input |
+| SC-L11 | The attested trigger list governs Law-10 in *i-contexts: the recorded trigger class (house/chief) palatalizes; the unlisted-*k negative arm is SC-L2 | behavioral | pytest vectors from the recorded trigger-list data (R-L1(d)) |
+| SC-L12 | The †-class exception data overrides Law-10: the recorded 'good'/-ew paradigm forms (Goddard 1981:83 class) do not palatalize via the law, and the exception route is recorded in the trace | behavioral | pytest vectors from the recorded †-class exception data (R-L1(e)) |
+| SC-L13 | Every output whose derivation applies a recorded B5 application carries the pending-ratification flag; B5-dependent output is never produced unflagged | behavioral | pytest vectors over the recorded B5-derived chain rows and the R-L1(f) recommendation data, asserting the flag on each B5-dependent output |
+| SC-L14 | Every forward/inverse output carries a confidence class (fully-derived / partial / lookup-governed / flagged) consistent with its derivation trace | behavioral | pytest vectors asserting the field on forward, composed, and inverse outputs and its trace-consistency |
+| SC-L15 | Every forward/inverse output carries an attested/chain-derived/composed status consistent with its derivation trace | behavioral | pytest vectors asserting the field on forward, composed, and inverse outputs and its trace-consistency |
+| SC-L16 | Lawless segments carry through and flag: the proto-laryngeal *H in the recorded house derivation carries through and flags lawless in output and trace | behavioral | pytest vector on the recorded house chain asserting the lawless flag |
+| SC-L17 | The cross-verification surface exposes the forward/inverse comparison: a forward PSNEA form inside its cognates' inverse intersection marks confirmed, outside it marks flagged | behavioral | pytest vectors through the comparison surface on rule-data-derived fixture sets |
 
-Fixtures for SC-L4/5/6 are unit-scale, derived from the parent record, and
-injected; they are not the record-level certification.
+Fixtures for SC-L4–L6 and SC-L10–L17 are unit-scale, derived from the parent
+record, and injected; they are not the record-level certification.
 
 ## 5. Edge cases carried from parent #134 §6
 
