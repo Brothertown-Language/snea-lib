@@ -1,1 +1,5 @@
-comments: []
+comments:
+- type: internal
+  body: 'Reconciled to the remote tracker: CLOSED by michael-conrad 2026-10-22T22:50Z,
+    no reason stated on the tracker. Discovery state recorded — not a verdict.'
+  timestamp: '2026-10-22T22:54:57+00:00'
