@@ -33,6 +33,18 @@ storage is always the Costa alphabet; community orthographies (Trumbull,
 Prince-Speck, Williams, Edwards, et al.) are display-time rendering overrides.
 One convention feeds both this library and `snea-grammar`.
 
+## Copyright safety (enforced)
+
+A copyright safety check is required on every addition to this repository.
+Material whose license does not permit tracking — in-copyright scans, CDL
+page-image captures, paywalled extracts — lives ONLY in `private/`
+(gitignored): never `tmp/`, never the tracked tree. Trackable material
+(public-domain text, metadata indexes, search-inside snippet text) is tracked
+at its canonical home in its owning repository. `private/` holds durable
+private material only — `tmp/` holds only throwaway work, cleaned up after
+its task. This mirrors the copyright-placement convention of the other
+`snea-*` projects.
+
 ## Workflow
 
 - Branch before any file modification (`feature/<issue>-<slug>`); trunk is

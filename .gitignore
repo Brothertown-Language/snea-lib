@@ -11,6 +11,9 @@ build/
 .ruff_cache/
 .direnv/
 
+# Copyright safety: non-trackable material lives only here (gitignored)
+private/
+
 # Environment
 .env
 .DS_Store
