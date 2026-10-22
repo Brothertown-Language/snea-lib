@@ -1,0 +1,284 @@
+# Rule data of record: the formal reversed-rule set for PSNEA-stage
+# reconstruction from daughter attestations.
+#
+# Extracted from the parent record:
+#   docs/research/psnea-reversed-rule-inventory.yaml (the formal reversed-rule
+#   inventory, 2026-10-20) — per-daughter inverses of the paper's Tables 1-3,
+#   the conversion-layer registry (held by reference to the tracked conversion
+#   cards, never duplicated), and the reconciliation procedure.
+#
+# Gap-marking discipline (identical to the forward inventory): every inverse
+# the sources do not uniquely determine is typed one_to_many with its
+# ambiguity stated, or gap_marked with the gap stated — never filled. A
+# merger is inverted as a SET of candidate PSNEA values, never as a single
+# guessed value. Structured fields: reflexes/psnea are token lists.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/psnea-reversed-rule-inventory.yaml (parent record, 2026-10-20)"
+  forward_inventory: "forward_laws.yaml (this package; the parent's sound-law-rule-inventory.yaml)"
+  correspondence_tables: "forward_tables.yaml (this package; the paper's Tables 1-3)"
+  lexicon_data_of_record: "docs/research/data/bt-primer-lessons.tsv (parent record)"
+  ledger: "docs/research/data/bt-starter-lexicon.yaml (parent record)"
+  cognates_record: "docs/research/data/bt-starter-lexicon-cognates.yaml (parent record)"
+
+inversion_principles:
+  - id: merger-inversion-is-a-set
+    rule: >-
+      where the forward chain merges two or more PSNEA values into one
+      daughter reflex, the inverse records the full candidate set; the set
+      collapses only through the reconciliation procedure, and the collapse
+      is recorded
+  - id: row-identity-carried
+    rule: >-
+      where a row's PSNEA value differs from its PA ancestor, the inverse
+      targets the PSNEA value with the row identity recorded
+  - id: unstated-environments-never-filled
+    rule: >-
+      where the forward cell's conditioning is unstated, the inverse carries
+      the same gap; reflex distributions the sources do not explain are
+      recorded as open, never regularized
+  - id: daughter-own-developments-gap-marked
+    rule: >-
+      the tables state the daughter cells are attested reflexes whose own
+      per-language developments are per-language; the inverse records the
+      table value and gap-marks per-language development the tables do not
+      state
+  - id: final-shape-is-not-a-stage
+    rule: >-
+      word-final developments (Table 3) apply after the segmental inverse,
+      never read into it: the recovered PSNEA stage keeps the pre-final shape
+
+# The v1 source registry is the exercised set (spec R-L7). A source converts
+# through its OWN daughter column. Winslow 1624 and Anonymous 1647 join only
+# when conversion-layer certification anchors exist (excluded here).
+source_registry:
+  - source: williams-1643
+    daughter: Nr
+    daughter_note: "Nr + Ms-side Chart-B readings"
+    card_ref: "docs/research/narragansett-williams-1643.md (parent record)"
+    chart_note: "O'Brien Chart B (per the record's conversion_layer entry)"
+    status: registered
+  - source: prince-speck-1904
+    daughter: Mp
+    card_ref: "docs/research/mohegan-pequot-prince-speck-1904.md (parent record)"
+    status: registered
+  - source: wood-1634
+    daughter: Ms-side
+    card_ref: "docs/research/wampanoag-wood-1634.md (parent record)"
+    status: registered
+  - source: trumbull-1903
+    daughter: Ms-side
+    card_ref: "docs/research/wampanoag-trumbull-1903.md (parent record)"
+    status: registered
+  - source: edwards-1787
+    daughter: Mh
+    card_ref: "docs/research/mahican-edwards-1787.md (parent record)"
+    status: calibration-only
+    calibration_note: "Mahican is not an SNEA daughter — its forms corroborate, they never source a PSNEA stage"
+  - source: winslow-1624
+    daughter: Ms-side
+    status: excluded-pending-anchors
+  - source: anonymous-1647
+    daughter: Ms-side
+    status: excluded-pending-anchors
+
+calibration_inversion:
+  role: >-
+    Mahican (Edwards 1787), Munsee, Loup, and the other non-SNEA columns serve
+    the chain as calibration only: their attestations corroborate a PSNEA-stage
+    candidate but never source a PSNEA stage, because the PSNEA-defining laws
+    are all-and-only SNEA (the paper's Authority and provenance statement)
+  edwards-1787: {card: "docs/research/mahican-edwards-1787.md (parent record)", marker: corroboration-only}
+
+reconciliation:
+  procedure:
+    - step: 1
+      name: source-selection
+      rule: "take the gloss's cognate set from the cognates record; every source in it is a recorded attestation"
+    - step: 2
+      name: conversion
+      rule: "per source, the attested spelling's phonemes are injected (the library references the conversion cards, never reimplements them)"
+    - step: 3
+      name: per-daughter-inversion
+      rule: "per source, invert per segment through the source's OWN daughter column; each segment's output is the candidate SET the column's rules state (one_to_many yields the full set)"
+    - step: 4
+      name: intersection
+      rule: >-
+        intersect the candidate sets per segment across the cognates; the
+        PSNEA value is the one consistent with all the cognates. A
+        single-source case keeps its candidate set (the ambiguity stays
+        stated — flag: candidate-set-standing)
+    - step: 5
+      name: residue
+      rule: >-
+        where the cognates imply different values, the disagreement is a
+        koine selection point: the ladder picks the BL outcome and the
+        displaced alternant is recorded
+  tie_breaker_ladder:
+    - "1. weighted majority (demographic x evidential)"
+    - "2. attestation density"
+    - "3. conservative retention (the reflex equal to the PSNEA value)"
+    - "4. contested: referred to the linguist, never averaged or coin-flipped"
+
+reversed_rules:
+  Ms:
+    label: "Massachusett(-Coweset)"
+    forward_cells: "paper Tables 1-2, Ms column"
+    rules:
+      - {id: inv-Ms-p, reflexes: ["p"], psnea: ["*p"], type: one_to_one}
+      - {id: inv-Ms-t, reflexes: ["t"], psnea: ["*t"], type: one_to_one}
+      - {id: inv-Ms-ch, reflexes: ["ch"], psnea: ["*č"], type: one_to_one}
+      - {id: inv-Ms-k, reflexes: ["k"], psnea: ["*k"], type: one_to_one}
+      - {id: inv-Ms-ty, reflexes: ["ty"], psnea: ["*tʲ"], type: one_to_one}
+      - {id: inv-Ms-s, reflexes: ["s"], psnea: ["*s", "*š"], type: one_to_many,
+         ambiguity: "Law 9 merges *š into *s before the daughter stage: Ms s inverts to the set {*s, *š}; resolved only by cognate intersection or etymology"}
+      - {id: inv-Ms-n, reflexes: ["n"], psnea: ["*n", "*θ", "*l", "*r"], type: one_to_many,
+         ambiguity: "the θ/l/r-to-r-to-n merger meets the *n identity in Ms n: four-way inverse, resolved only by cognate intersection or etymology"}
+      - {id: inv-Ms-m, reflexes: ["m"], psnea: ["*m"], type: one_to_one}
+      - {id: inv-Ms-w, reflexes: ["w"], psnea: ["*w"], type: one_to_one}
+      - {id: inv-Ms-y, reflexes: ["y"], psnea: ["*y"], type: one_to_one}
+      - {id: inv-Ms-hs, reflexes: ["hs"], psnea: ["*hš (from *hx)", "*hs"], type: one_to_many,
+         ambiguity: "the Massachusett chain shift writes both the *hx-set and the *hs-set as hs; two-way inverse"}
+      - {id: inv-Ms-hsh, reflexes: ["hš"], psnea: ["*hš (from *hr)"], type: one_to_one}
+      - {id: inv-Ms-hch, reflexes: ["hč"], psnea: ["*hč"], type: one_to_one}
+      - {id: inv-Ms-hk, reflexes: ["hk", "q"], psnea: ["*hk"], type: one_to_one,
+         note: "q is the spelling before /w/ (Goddard 1981 §15), not a distinct reflex"}
+      - {id: inv-Ms-ht, reflexes: ["ht"], psnea: ["*ht"], type: one_to_one}
+      - {id: inv-Ms-sk, reflexes: ["sk"], psnea: ["*šk"], type: one_to_one}
+      - {id: inv-Ms-hp, reflexes: ["hp"], psnea: ["*hp"], type: one_to_one}
+      - {id: inv-Ms-nt-nk, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the Ms column states no reflex for *nt/*nk; no Ms-side rule here (the Mp/WP t/k cells carry Law 18)"}
+      - {id: inv-Ms-final-sh, reflexes: ["š", "s"], psnea: ["*r (word-final, via the r-set)"], type: one_to_many,
+         ambiguity: "the final r-set (*θ/*l/*r) and the Law 13 s-gradient land in word-final š/s; the s-alternation is the gradient, not a distinct etymon"}
+      - {id: inv-Ms-a, reflexes: ["a"], psnea: ["*a", "*ǝ"], type: one_to_many,
+         ambiguity: "Law 4 merges PA *e into PSNEA *ǝ and the *ǝ reflex lands with *a's in Ms a: two-way inverse, resolved only by cognate intersection or etymology"}
+      - {id: inv-Ms-i, reflexes: ["i"], psnea: ["*ī"], type: one_to_one,
+         note: "per-language short-i developments (shortened *ī) are not stated in the tables — gap-marked"}
+      - {id: inv-Ms-o, reflexes: ["õ"], psnea: ["*ō"], type: one_to_one}
+      - {id: inv-Ms-a-dot, reflexes: ["ã·"], psnea: ["*ā"], type: one_to_one}
+      - {id: inv-Ms-e-dot, reflexes: ["â"], psnea: ["*ē"], type: one_to_one}
+      - {id: inv-Ms-schwa, reflexes: ["ə"], psnea: ["*ǝ (unstressed)", "*a (unstressed)"], type: one_to_many,
+         ambiguity: "the retained unstressed vowel is two-way (e-origin or a-origin); environment is unstressed position (Law 16)"}
+      - {id: inv-Ms-deletion, reflexes: ["Ø"], psnea: ["word-final V", "unstressed *ǝ/*a"], type: one_to_many,
+         ambiguity: "deletion contexts are stated in Law 16 and Table 3; the deleted segment is not recoverable from the daughter form alone"}
+  Nr:
+    label: "Narragansett (Williams 1643; the Coweset/Southern-Nr y-mixture per the founding table)"
+    forward_cells: "paper Tables 1-2, Nr column"
+    rules:
+      - {id: inv-Nr-p, reflexes: ["p"], psnea: ["*p"], type: one_to_one}
+      - {id: inv-Nr-t, reflexes: ["t"], psnea: ["*t"], type: one_to_one}
+      - {id: inv-Nr-ch, reflexes: ["ch"], psnea: ["*č", "*tʲ"], type: one_to_many,
+         ambiguity: "palatalized *k (PSNEA *tʲ) and inherited *č both surface as Nr ch: two-way inverse, resolved only by cognate intersection or etymology"}
+      - {id: inv-Nr-k, reflexes: ["k"], psnea: ["*k"], type: one_to_one}
+      - {id: inv-Nr-s, reflexes: ["s"], psnea: ["*s", "*š"], type: one_to_many,
+         ambiguity: "the Law 9 merger: two-way inverse, resolved only by cognate intersection or etymology"}
+      - {id: inv-Nr-n, reflexes: ["n"], psnea: ["*n", "*θ", "*l", "*r"], type: one_to_many,
+         ambiguity: "four-way inverse (the r-merger meets the *n identity), resolved only by cognate intersection or etymology"}
+      - {id: inv-Nr-m, reflexes: ["m"], psnea: ["*m"], type: one_to_one}
+      - {id: inv-Nr-w, reflexes: ["w"], psnea: ["*w"], type: one_to_one}
+      - {id: inv-Nr-y, reflexes: ["y"], psnea: ["*y"], type: one_to_one,
+         note: "the Coweset/Southern-Nr y-mixture is the founding table's recorded dialect fact, not a rule of this column"}
+      - {id: inv-Nr-hsh, reflexes: ["hš"], psnea: ["*hš"], type: one_to_one,
+         note: "both the *hx-set and the *hr-set rows land in Nr hš — the PSNEA value is *hš either way; the row split (hx vs hr) is not recoverable"}
+      - {id: inv-Nr-hk, reflexes: ["hk"], psnea: ["*hk"], type: one_to_one}
+      - {id: inv-Nr-ht, reflexes: ["ht"], psnea: ["*ht"], type: one_to_one}
+      - {id: inv-Nr-hch-hs, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the Nr column states no reflex for *hč or *hs; no Nr-side inverse"}
+      - {id: inv-Nr-sk, reflexes: ["sk"], psnea: ["*šk"], type: one_to_one}
+      - {id: inv-Nr-sq, reflexes: ["sq"], psnea: ["*xkw"], type: one_to_one}
+      - {id: inv-Nr-hp, reflexes: ["hp"], psnea: ["*hp"], type: one_to_one}
+      - {id: inv-Nr-nt-nk, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the Nr column states no reflex for *nt/*nk; no Nr-side inverse (the Mp/WP cells carry Law 18)"}
+      - {id: inv-Nr-final-sh, reflexes: ["š", "s"], psnea: ["*r (word-final, via the r-set)"], type: one_to_many,
+         ambiguity: "as the Ms final rule: the s-alternation is the Law 13 gradient"}
+      - {id: inv-Nr-a, reflexes: ["a"], psnea: ["*a", "*ǝ"], type: one_to_many,
+         ambiguity: "two-way inverse (the Law 4 merger), resolved only by cognate intersection or etymology"}
+      - {id: inv-Nr-i, reflexes: ["i"], psnea: ["*ī"], type: one_to_one,
+         note: "per-language short-i developments gap-marked"}
+      - {id: inv-Nr-oo, reflexes: ["oo"], psnea: ["*ō"], type: one_to_one}
+      - {id: inv-Nr-o, reflexes: ["ô"], psnea: ["*ā"], type: one_to_one}
+      - {id: inv-Nr-e-dot, reflexes: ["â"], psnea: ["*ē"], type: one_to_one}
+      - {id: inv-Nr-deletion, reflexes: ["Ø"], psnea: ["word-final V", "unstressed *ǝ/*a"], type: one_to_many,
+         ambiguity: "the Nr deletion cell is gap-marked in the tables (—); deletion is recorded only where a cognate set supports it"}
+  Mp:
+    label: "Mohegan-Pequot(-Montauk)"
+    forward_cells: "paper Tables 1-2, Mp column (Fielding's chart as Cunningham-corrected)"
+    rules:
+      - {id: inv-Mp-p, reflexes: ["p"], psnea: ["*p"], type: one_to_one}
+      - {id: inv-Mp-t, reflexes: ["t"], psnea: ["*t", "*nt"], type: one_to_many,
+         ambiguity: "Law 18 (the Cunningham correction: *nt > t with no nasalized-vowel development) lands in the same cell as the *t identity: two-way inverse, resolved only by cognate intersection or etymology"}
+      - {id: inv-Mp-c, reflexes: ["c"], psnea: ["*č", "*tʲ"], type: one_to_many,
+         ambiguity: "two-way inverse (inherited *č and palatalized *k both surface as c), resolved only by cognate intersection or etymology"}
+      - {id: inv-Mp-k, reflexes: ["k"], psnea: ["*k", "*nk"], type: one_to_many,
+         ambiguity: "Law 18 (*nk > k) lands in the *k cell: two-way inverse"}
+      - {id: inv-Mp-s, reflexes: ["s"], psnea: ["*s"], type: one_to_one}
+      - {id: inv-Mp-sh, reflexes: ["sh"], psnea: ["*s (via the *š row)"], type: one_to_many,
+         ambiguity: "Mp s and Mp sh both invert to PSNEA *s (the *s identity row and the *s-merger row respectively); the s/sh distribution in Mp is not stated in the sources — recorded open, never regularized"}
+      - {id: inv-Mp-y, reflexes: ["y"], psnea: ["*y", "*θ", "*l", "*r"], type: one_to_many,
+         ambiguity: "four-way inverse (the r-merger meets the *y identity), resolved only by cognate intersection or etymology"}
+      - {id: inv-Mp-m, reflexes: ["m"], psnea: ["*m"], type: one_to_one}
+      - {id: inv-Mp-n, reflexes: ["n"], psnea: ["*n"], type: one_to_one}
+      - {id: inv-Mp-w, reflexes: ["w"], psnea: ["*w"], type: one_to_one}
+      - {id: inv-Mp-hsh, reflexes: ["hsh"], psnea: ["*hš (from *hx)", "*hš (from *hr)", "*hč", "*hs"], type: one_to_many,
+         ambiguity: "four-way merge in the chart: all four cluster rows surface as Mp hsh; resolved only by cognate intersection or etymology"}
+      - {id: inv-Mp-hk, reflexes: ["hk"], psnea: ["*hk"], type: one_to_one}
+      - {id: inv-Mp-ht, reflexes: ["ht"], psnea: ["*ht"], type: one_to_one}
+      - {id: inv-Mp-sk, reflexes: ["sk", "c"], psnea: ["*šk"], type: one_to_one,
+         note: "the c alternate is the chart's recorded variation for this row"}
+      - {id: inv-Mp-shq, reflexes: ["shq"], psnea: ["*xkw"], type: one_to_one}
+      - {id: inv-Mp-hp, reflexes: ["hp"], psnea: ["*hp"], type: one_to_one,
+         note: "Cunningham correction: hp, not cp"}
+      - {id: inv-Mp-final-sh, reflexes: ["š", "s"], psnea: ["*r (word-final, via the r-set)"], type: one_to_many,
+         ambiguity: "as the Ms final rule"}
+      - {id: inv-Mp-a, reflexes: ["a"], psnea: ["*a"], type: one_to_one}
+      - {id: inv-Mp-u, reflexes: ["u"], psnea: ["*ǝ"], type: one_to_one,
+         note: "the Mp u cell is the *ǝ reflex alone in the tables; the Modern-Mohegan letter value divergence is the comparison's content, not an inversion ambiguity"}
+      - {id: inv-Mp-i, reflexes: ["i"], psnea: ["*ī"], type: one_to_one,
+         note: "per-language short-i developments gap-marked"}
+      - {id: inv-Mp-o, reflexes: ["o"], psnea: ["*ō"], type: one_to_one}
+      - {id: inv-Mp-o-dot, reflexes: ["ô"], psnea: ["*ā"], type: one_to_one}
+      - {id: inv-Mp-a-acute, reflexes: ["á"], psnea: ["*ē"], type: one_to_one}
+      - {id: inv-Mp-deletion, reflexes: ["Ø"], psnea: ["word-final V", "unstressed *ǝ/*a"], type: one_to_many,
+         ambiguity: "deleted segments are not recoverable from the daughter form alone"}
+  WP:
+    label: "Wampano = Quiripi-Unquachog (r-dialect; Rudes 1997)"
+    forward_cells: "paper Tables 1-2, WP column"
+    rules:
+      - {id: inv-WP-p, reflexes: ["p"], psnea: ["*p"], type: one_to_one}
+      - {id: inv-WP-t, reflexes: ["t"], psnea: ["*t", "*nt"], type: one_to_many,
+         ambiguity: "Law 18 (*nt > t) lands in the *t cell: two-way inverse"}
+      - {id: inv-WP-ch, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the WP column states no reflex for *č (Rudes's mainland (š) alternation is the sibilant row's dialect fact, not a *č reflex)"}
+      - {id: inv-WP-k, reflexes: ["k"], psnea: ["*k", "*nk"], type: one_to_many,
+         ambiguity: "Law 18 (*nk > k) lands in the *k cell: two-way inverse"}
+      - {id: inv-WP-palatalized-k, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the WP column states no reflex for palatalized *k; no WP-side inverse for *tʲ"}
+      - {id: inv-WP-s, reflexes: ["s"], psnea: ["*s", "*š"], type: one_to_many,
+         ambiguity: "the Law 9 merger (insular reading per Table 1 note b): two-way inverse; the mainland (š) alternation is Table 9's recorded dialect fact"}
+      - {id: inv-WP-r, reflexes: ["r", "y"], psnea: ["*θ", "*l", "*r"], type: one_to_many,
+         ambiguity: "three-way inverse; the r/y split is the recorded mainland/insular dialect division (Rudes Table 3), not a segmental conditioning"}
+      - {id: inv-WP-n, reflexes: ["n"], psnea: ["*n"], type: one_to_one}
+      - {id: inv-WP-m, reflexes: ["m"], psnea: ["*m"], type: one_to_one}
+      - {id: inv-WP-w, reflexes: ["w"], psnea: ["*w"], type: one_to_one}
+      - {id: inv-WP-y, reflexes: ["y"], psnea: ["*y"], type: one_to_one,
+         note: "WP y is shared with the insular r-set reflex (inv-WP-r); the y-inverse is two-way with it"}
+      - {id: inv-WP-clusters, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the WP column states no reflex for the preaspirated cluster rows (except hp); no WP-side inverses there"}
+      - {id: inv-WP-hp, reflexes: ["hp"], psnea: ["*hp"], type: one_to_one}
+      - {id: inv-WP-tch, reflexes: ["tch"], psnea: ["*šk"], type: one_to_one}
+      - {id: inv-WP-sq, reflexes: ["sq"], psnea: ["*xkw"], type: one_to_one}
+      - {id: inv-WP-final-sh, reflexes: ["š", "s"], psnea: ["*r (word-final, via the r-set)"], type: one_to_many,
+         ambiguity: "as the Ms final rule"}
+      - {id: inv-WP-a, reflexes: ["a"], psnea: ["*a"], type: one_to_one}
+      - {id: inv-WP-schwa, reflexes: ["ə", "a"], psnea: ["*ǝ"], type: one_to_one,
+         note: "the ə/a alternation is the recorded dialect split, not a segmental ambiguity"}
+      - {id: inv-WP-i, reflexes: ["i"], psnea: ["*ī"], type: one_to_one,
+         note: "per-language short-i developments gap-marked"}
+      - {id: inv-WP-o, reflexes: [], psnea: [], type: gap_marked,
+         gap: "the WP column states no reflex for *ō; no WP-side inverse"}
+      - {id: inv-WP-a-dot, reflexes: ["ã·"], psnea: ["*ā"], type: one_to_one}
+      - {id: inv-WP-e-dot, reflexes: ["a·"], psnea: ["*ē"], type: one_to_one}
+      - {id: inv-WP-deletion, reflexes: ["Ø"], psnea: ["word-final V", "unstressed *ǝ/*a"], type: one_to_many,
+         ambiguity: "deleted segments are not recoverable from the daughter form alone"}

@@ -1,0 +1,353 @@
+meta:
+  purpose: 'SC-L7 parity frozen vector (snea-lib#2 item 7): the migrated snea_lib.bl_ipa must reproduce
+    the parent module''s outputs verbatim over this Costa-letter word set, captured from the parent''s
+    src/bl_ipa.py at migration time.'
+  captured_from: snea-phonetics src/bl_ipa.py (parent record)
+  surfaces:
+  - bt-starter-lexicon.yaml bl fields
+  - bt-primer-lessons.tsv bl_letters values
+  unconvertible_skipped: 1
+  unconvertible_named: good-morrow (its bl field is the placeholder annotation "(provisional)" — not a BL orthography string)
+  note: The starred Table 6 forms are outside this word set (starred phonemic notation, not the Costa-letter
+    domain); they are asserted as strings in the forward-chain vectors (item 8).
+words:
+- word: nin
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#pron-1s
+  expected_ipa: ˈniːn
+- word: kin
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#pron-2s
+  expected_ipa: ˈkiːn
+- word: iwa
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#pron-3s
+  expected_ipa: ˌiːˈwa
+- word: awán
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#who
+  expected_ipa: aˈweːn
+- word: tiaqa
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#what
+  expected_ipa: ˌtiːˈakwa
+- word: nuks
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#yes-particle
+  expected_ipa: ˈnəks
+- word: mat
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#not
+  expected_ipa: ˈmat
+- word: tahwic
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#why
+  expected_ipa: taˈhwiːtʃ
+- word: nitôp
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#friend
+  expected_ipa: ˌniːˈtʌ̃ːp
+- word: nohsh
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#father-1s
+  expected_ipa: ˈnoːhʃ
+- word: nukya
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#mother-1s
+  expected_ipa: nəˈkja
+- word: numuqôcuks
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#son-1s
+  expected_ipa: nəˌməˈkwʌ̃ːtʃəks
+- word: kumuqôcuks
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#son-2s
+  expected_ipa: kəˌməˈkwʌ̃ːtʃəks
+- word: nitônis
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#daughter-1s
+  expected_ipa: ˌniːˈtʌ̃ːˌniːs
+- word: kutônis
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#daughter-2s
+  expected_ipa: kəˈtʌ̃ːˌniːs
+- word: nimat
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#brother-1s
+  expected_ipa: ˌniːˈmat
+- word: nuwáquntam
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#glad-1s
+  expected_ipa: nəˌweːˈkwəntam
+- word: kawôtam
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#understand-2s
+  expected_ipa: kaˈwʌ̃ːtam
+- word: nawôtam
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#understand-1s
+  expected_ipa: naˈwʌ̃ːtam
+- word: kutoan
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#speak-2s
+  expected_ipa: kəˈtoːan
+- word: nutoan
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#speak-1s
+  expected_ipa: nəˈtoːan
+- word: piyash
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#come-hither-imp
+  expected_ipa: ˌpiːˈjaʃ
+- word: matapsh
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#sit-down-imp
+  expected_ipa: maˈtapʃ
+- word: putitis
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#come-in-imp
+  expected_ipa: pəˈtiːˌtiːs
+- word: mutusituk
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#lets-eat
+  expected_ipa: məˌtəˈsiːtək
+- word: wutatumuta
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#lets-drink
+  expected_ipa: wəˌtatəˈməta
+- word: kunununi
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#see-2s-1s-goal
+  expected_ipa: kəˌnəˈnəˌniː
+- word: kunununus
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#see-1s-2s-goal
+  expected_ipa: kəˌnəˈnənəs
+- word: tukutusawutc
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#name-2s-q
+  expected_ipa: təˌkətəˈsawəttʃ
+- word: ntusawusu
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#called-1s
+  expected_ipa: ntəˌsaˈwəsə
+- word: tukawikin
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#dwell-2s-q
+  expected_ipa: təˌkaˈwiːˌkiːn
+- word: yu-nawikin
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#dwell-1s
+  expected_ipa: jəˌ-naˈwiːˌkiːn
+- word: kawômôsh
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#love-1s-2s-goal
+  expected_ipa: kaˈwʌ̃ːˌmʌ̃ːʃ
+- word: kawômônuk
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#love-3s-2s-goal
+  expected_ipa: kaˌwʌ̃ːˈmʌ̃ːnək
+- word: kumáyush
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#give-1s-2s-goal
+  expected_ipa: kəˈmeːjəʃ
+- word: numáyun
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#give-2s-1s-goal
+  expected_ipa: nəˈmeːjən
+- word: wumáyun
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#give-2s-3s-goal
+  expected_ipa: wəˈmeːjən
+- word: miyo
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#give-3s-3s-goal
+  expected_ipa: ˌmiːˈjoː
+- word: kawôkumish
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#greet-service
+  expected_ipa: kaˌwʌ̃ːˈkəˌmiːʃ
+- word: hawunshuc
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#farewell
+  expected_ipa: haˈwənʃətʃ
+- word: askutôqumpsin
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#how-do-you
+  expected_ipa: aˌskəˌtʌ̃ːˈkwəˌmpsiːn
+- word: asunpômpamôntam
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#i-am-well
+  expected_ipa: aˌsəˌnpʌ̃ːmpaˈmʌ̃ːntam
+- word: yo
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#this
+  expected_ipa: ˈjoː
+- word: nupá
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#water
+  expected_ipa: nəˈpeː
+- word: mutáh
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#heart
+  expected_ipa: məˈteːh
+- word: nuhshwi
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#three
+  expected_ipa: nəˈhʃwiː
+- word: wipitay
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#teeth-3s
+  expected_ipa: ˌwiːˈpiːtaj
+- word: uyuniw
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#man
+  expected_ipa: əˈjəˌniːw
+- word: skitôp
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#man-alt
+  expected_ipa: ˌskiːˈtʌ̃ːp
+- word: munahan
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#island
+  expected_ipa: məˈnahan
+- word: sôcimôw
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#chief
+  expected_ipa: ˌsʌ̃ːˈtʃiːˌmʌ̃ːw
+- word: -ash
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#inan-pl
+  expected_ipa: ˈ-aʃ
+- word: wiciwôh
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#house
+  expected_ipa: ˌwiːˈtʃiːˌwʌ̃ːh
+- word: wunitu
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#good
+  expected_ipa: wəˈniːtə
+- word: wikun
+  surface: lexicon
+  cite: bt-starter-lexicon.yaml#good-alt
+  expected_ipa: ˌwiːˈkən
+- word: Askutôqumpsin?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: aˌskəˌtʌ̃ːˈkwəˌmpsiːn?
+- word: Asunpômpamôntam.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: aˌsəˌnpʌ̃ːmpaˈmʌ̃ːntam.
+- word: Kawôkumish.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: kaˌwʌ̃ːˈkəˌmiːʃ.
+- word: Hawunshuc.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: haˈwənʃətʃ.
+- word: Awán iwa?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: aˈweːn ˌiːˈwa?
+- word: ___ iwa.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ___ ˌiːˈwa.
+- word: Tiaqa yo?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˌtiːˈakwa ˈjoː?
+- word: ___ yo.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ___ ˈjoː.
+- word: Yo kutônis?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈjoː kəˈtʌ̃ːˌniːs?
+- word: Nuks, yo nitônis.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈnəks, ˈjoː ˌniːˈtʌ̃ːˌniːs.
+- word: Yo kumuqôcuks?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈjoː kəˌməˈkwʌ̃ːtʃəks?
+- word: Nuks, yo numuqôcuks.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈnəks, ˈjoː nəˌməˈkwʌ̃ːtʃəks.
+- word: nimat / nohsh / nukya / nitôp
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˌniːˈmat / ˈnoːhʃ / nəˈkja / ˌniːˈtʌ̃ːp
+- word: Kawôtam?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: kaˈwʌ̃ːtam?
+- word: Nuks, nawôtam.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈnəks, naˈwʌ̃ːtam.
+- word: Mat kawôtam?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈmat kaˈwʌ̃ːtam?
+- word: Nuks, mat nawôtam.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈnəks, ˈmat naˈwʌ̃ːtam.
+- word: Tahwic puyôyuan?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: taˈhwiːtʃ pəˌjʌ̃ːˈjəan?
+- word: ___, puyôyuam.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ___, pəˌjʌ̃ːˈjəam.
+- word: Tahwic mat puyôyuan?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: taˈhwiːtʃ ˈmat pəˌjʌ̃ːˈjəan?
+- word: ___, mat puyôyuam.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ___, ˈmat pəˌjʌ̃ːˈjəam.
+- word: Numáyun yo? / Wumáyun yo?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: nəˈmeːjən ˈjoː? / wəˈmeːjən ˈjoː?
+- word: Kumáyush yo. / Miyo.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: kəˈmeːjəʃ ˈjoː. / ˌmiːˈjoː.
+- word: Kawômôsh.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: kaˈwʌ̃ːˌmʌ̃ːʃ.
+- word: Kawômônuk.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: kaˌwʌ̃ːˈmʌ̃ːnək.
+- word: Wunitu iwa.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: wəˈniːtə ˌiːˈwa.
+- word: Nuks, wunitu.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈnəks, wəˈniːtə.
+- word: Kunununi?
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: kəˌnəˈnəˌniː?
+- word: Nuks, kunununus.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: ˈnəks, kəˌnəˈnənəs.
+- word: Hawunshuc, nitôp.
+  surface: primer-lesson-table
+  cite: bt-primer-lessons.tsv
+  expected_ipa: haˈwənʃətʃ, ˌniːˈtʌ̃ːp.

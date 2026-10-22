@@ -1,0 +1,40 @@
+# Rule data of record: the recorded B5 applications — recommendations on
+# record, with pending-ratification flags. The library never treats them as
+# ratified (spec R-L2: carried exactly as the record states them; parent #134
+# §3 R-2; validator-verified wording).
+#
+# Extracted from the parent record:
+#   docs/research/data/bt-starter-lexicon.yaml (the entries whose flags carry
+#   'vowel reduction (recommendation on record: ratify as the B5 application)')
+#
+# An application applies only via its recorded entry; every output whose
+# derivation applies one carries the pending-ratification flag
+# (b5-pending-ratification). Plain carried-B5 (B5 named in the law chain with
+# no application applied — the island/heart rows) produces neither the flag
+# nor a b5-application trace entry.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/data/bt-starter-lexicon.yaml (parent record)"
+  status: "recommendations on record — pending ratification; never ratified library-side"
+
+recommendations:
+  - id: lets-eat-vowel-reduction
+    lexicon_entry: lets-eat
+    entry_gloss: "let us go eat"
+    application: "vowel reduction (recommendation on record: ratify as the B5 application)"
+    applies_to_psnea: "*mǝtǝsītǝk"
+    recorded_bl: "mutusituk"
+    pending_ratification: true
+    cite: "bt-starter-lexicon.yaml#lets-eat (flags)"
+  - id: see-2s-1s-goal-vowel-reduction
+    lexicon_entry: see-2s-1s-goal
+    entry_gloss: "have you seen me?"
+    application: >-
+      vowel reduction (recommendation on record: ratify as the B5 application;
+      the /kənəːni/ variant recommended dropped)
+    applies_to_psnea: "*kǝnǝnǝnī"
+    recorded_bl: "kunununi"
+    pending_ratification: true
+    cite: "bt-starter-lexicon.yaml#see-2s-1s-goal (flags)"

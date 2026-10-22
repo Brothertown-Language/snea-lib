@@ -1,0 +1,64 @@
+# Rule data of record: the BL three-face rendering data — the phoneme-to-
+# letter map (Costa/Modern-Mohegan letters with BL phonetic values, the
+# record's Tables 8/9 ruling) and the recorded special renderings.
+#
+# Extracted from the parent record:
+#   docs/research/pa-pea-psnea-sound-continuum.tex §sec:bt-orthography
+#   (Table 8 letters and notes; the *ā → ô / *ǝ → u / *ē → á letter-value
+#   mapping), the lexicon's orthographic-schwa epenthesis ground (the
+#   three row's nuhshwi), and the house row's final *-Hm rendering flag.
+#
+# Renderer conservatism: a BL phoneme without an entry here stops face
+# production with an unmapped-segment error — never an invented letter.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/pa-pea-psnea-sound-continuum.tex §sec:bt-orthography + lexicon flags (parent record)"
+  ruling: "Costa-alphabet storage: the orthography is borrowed from the Modern Mohegan alphabet; the values are BL's own (divergences carried in the record's Table 9 notes)"
+
+phoneme_to_letter:
+  "a": "a"
+  "ā": "ô"        # the nasal *ā reflex letter (Table 8: ô = the nasal vowel)
+  "ē": "á"        # the *ē reflex letter (Table 8: á = the *ē reflex; BL value /eː/)
+  "ī": "i"
+  "ō": "o"
+  "ǝ": "u"        # the *ǝ reflex letter ([ə] in BL's value set)
+  "tʲ": "c"       # the palatal stop's letter face (B4: the simple palatal realization)
+  "č": "c"
+  "p": "p"
+  "t": "t"
+  "k": "k"
+  "s": "s"
+  "š": "sh"
+  "h": "h"
+  "H": "h"        # the proto-laryngeal's independent-h letter face
+  "m": "m"
+  "n": "n"
+  "w": "w"
+  "y": "y"
+  "hš": "hsh"     # B3: the hš cluster's digraph
+  "hs": "hsh"     # (the hs variant's same digraph face — B3's cluster surface)
+  "hp": "hp"
+  "ht": "ht"
+  "hk": "hk"
+  "hč": "hsh"     # the cluster rows' recorded Mp-class face (Table 1: hč → Mp hsh)
+  "xkw": "hq"     # Law 26's cluster: BL writes every *kw as ⟨q⟩ (Table 8 note)
+
+special_renderings:
+  final-Hm:
+    input: "word-final *-Hm"
+    output: "ôh"
+    note: >-
+      the ⟨m⟩ the recorder's nasal mark — the ⟨Vn/Vm⟩ convention's
+      final-position instance; the attested Mp ⟨weejoh⟩ outcome + Goddard §28
+      final-m loss; applied 2026-10-20 (lexicon house flag)
+
+orthographic_epenthesis:
+  trigger: "a consonant directly followed by an h-initial cluster (no vowel between the two)"
+  letter: "u"
+  note: >-
+    the phonemic spellings write the schwa that the phonemic readings contain;
+    grounded: the three row's recorded orthography nuhshwi from **nhšwi
+    (lexicon flag "initial cluster rendering"; paper mini-dictionary
+    ⟨nuhshwi⟩ /nəˈhʃwiː/)

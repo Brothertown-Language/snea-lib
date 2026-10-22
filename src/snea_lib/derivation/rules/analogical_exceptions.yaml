@@ -1,0 +1,45 @@
+# Rule data of record: the †-class analogical exception data (Law-10
+# override).
+#
+# Extracted from the parent record:
+#   docs/research/pa-pea-psnea-sound-continuum.tex Table 5 'good' row (the †
+#   marker) and its note (f), citing Goddard 1981:83
+# The † marks the row as governed by analogy, not by the sound law: the
+# recorded 'good'/-ew paradigms do not palatalize via the law; the exception
+# route is recorded in the trace (the library carries the recommended
+# exception exactly as the record states it).
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/pa-pea-psnea-sound-continuum.tex Table 5 note (f) (parent record)"
+  class_cite: "Goddard 1981:83; Goddard 1981:74 (PA *werikiwa); Costa ex. (15)"
+
+exception_classes:
+  - id: daggers-good-ew-paradigms
+    marker: "†"
+    scope: >-
+      the -ew verb paradigms (third person), where the CT/LI languages show
+      unpalatalized k — "although by strict sound law one would expect [tʲ]
+      in these languages"
+    account: >-
+      the ty forms are conservative; Mohegan-Pequot (and Williams's
+      Narragansett doublets) analogically restored unpalatalized k before -ew
+      in the third person by paradigmatic levelling — and Williams's
+      unpalatalized forms probably represent mixture from dialects to the
+      west such as Mohegan-Pequot
+    recorded_pa_form: "*werikiwa"
+    recorded_gloss: "he is good, beautiful"
+    recorded_reflexes: >-
+      Ms ⟨wunnetu⟩ / Nr ⟨wunnêtu⟩ confirm the palatalization (the ty-forms,
+      the conservative side); the CT/LI languages show unpalatalized k:
+      Pq ⟨weyegoh⟩, Qr ⟨werrégo⟩, Uq ⟨woreeco⟩
+    exception: >-
+      the law does not palatalize this class via the law's route; the
+      †-marked row is governed by analogy; the generator's rule carries the
+      caveat for the -ew verb paradigms
+    engine_effect: >-
+      the exception route precedes the law's arms (R-L4's override rule): a
+      declared/matching member of this class does not palatalize via any Law-10
+      arm; the k carries, and the trace records the exception route
+      (flag: law10-exception-route)

@@ -1,0 +1,91 @@
+# Rule data of record: the forward correspondence tables (paper Tables 1-3).
+#
+# Extracted from the parent record (snea-phonetics):
+#   docs/research/pa-pea-psnea-sound-continuum.tex §2 (Tables 1-3 with notes)
+# Base tables: Fielding 2005's Sound Change Chart, as corrected by
+# Dr. Keith Cunningham (the corrected reading carried, the superseded Fielding
+# readings carried in the law data). Cells are filled only where a cited source
+# attests the reflex; null marks unattested-in-sources (the tables' ---).
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/pa-pea-psnea-sound-continuum.tex §2 (parent record)"
+  base: "Fielding 2005 pp. 26-27, as Cunningham-corrected (paper §2)"
+
+table1_consonants:
+  columns: [PA, PEA, PSNEA, Ms, Nr, Mp, WP, Law]
+  notes:
+    a: >-
+      Base: the Mp column is Fielding's Sound Change Chart as corrected by
+      Cunningham — her cp for *hp/*xp is superseded by hp (Law 19); her
+      *nt/*nk row is superseded by t / k (Law 18); her Delaware t (d?) is
+      resolved to t (p, t, k). All uncorrected Fielding rows stand as charted.
+    b: >-
+      The *š Mp cell reads sh as Fielding charted (uncorrected); the
+      PA/PEA/PSNEA columns follow Costa's EA-wide merger (Law 9). The Ms/Nr s
+      and WP s (insular) readings agree with Law 9.
+    c: >-
+      WP *θ/*l/*r: r in the mainland dialect, y in the insular dialect
+      (Rudes 1997 Table 3).
+    d: >-
+      Ms hk / q for Law 20: ⟨q⟩ is the spelling before /w/
+      (Goddard 1981 §15).
+    e: "Law-column null = no numbered law states a change for that row (identity reflex)."
+  rows:
+    - {pa: "*p", pea: "*p", psnea: "*p", ms: "p", nr: "p", mp: "p", wp: "p", law: null}
+    - {pa: "*t", pea: "*t", psnea: "*t", ms: "t", nr: "t", mp: "t", wp: "t", law: null}
+    - {pa: "*č", pea: "*č", psnea: "*č", ms: "ch", nr: "ch", mp: "c", wp: null, law: null}
+    - {pa: "*k (unpalatalized)", pea: "*k", psnea: "*k", ms: "k", nr: "k", mp: "k", wp: "k", law: null}
+    - {pa: "*k (palatalized)", pea: "*k", psnea: "*tʲ", ms: "ty", nr: "ch", mp: "c", wp: null, law: "10"}
+    - {pa: "*s", pea: "*s", psnea: "*s", ms: "s", nr: "s", mp: "s", wp: "s", law: null}
+    - {pa: "*š", pea: "*s", psnea: "*s", ms: "s", nr: "s", mp: "sh", wp: "s", law: "9"}
+    - {pa: "*θ", pea: "*r", psnea: "*r", ms: "n", nr: "n", mp: "y", wp: "r / y", law: "1, 3"}
+    - {pa: "*l", pea: "*r", psnea: "*r", ms: "n", nr: "n", mp: "y", wp: "r / y", law: "1, 3"}
+    - {pa: "*r", pea: "*r", psnea: "*r", ms: "n", nr: "n", mp: "y", wp: "r / y", law: "3"}
+    - {pa: "*m", pea: "*m", psnea: "*m", ms: "m", nr: "m", mp: "m", wp: "m", law: null}
+    - {pa: "*n", pea: "*n", psnea: "*n", ms: "n", nr: "n", mp: "n", wp: "n", law: null}
+    - {pa: "*w", pea: "*w", psnea: "*w", ms: "w", nr: "w", mp: "w", wp: "w", law: "8"}
+    - {pa: "*y", pea: "*y", psnea: "*y", ms: "y", nr: "y", mp: "y", wp: "y", law: "7"}
+    - {pa: "*ʔθ, *hθ, *hl", pea: "*hx", psnea: "*hš", ms: "hs", nr: "hš", mp: "hsh", wp: null, law: "2, 11"}
+    - {pa: "*ʔl, *nθ", pea: "*hr", psnea: "*hš", ms: "hš", nr: "hš", mp: "hsh", wp: null, law: "2, 11"}
+    - {pa: "*θk, *xk, *ʔk", pea: "*hk", psnea: "*hk", ms: "hk / q", nr: "hk", mp: "hk", wp: null, law: "20"}
+    - {pa: "*ht, *ʔt", pea: "*ht", psnea: "*ht", ms: "ht", nr: "ht", mp: "ht", wp: null, law: "21"}
+    - {pa: "*hč, *ʔč", pea: "*hč", psnea: "*hč", ms: "hč", nr: null, mp: "hsh", wp: null, law: "22"}
+    - {pa: "*hs, *ʔs", pea: "*hs", psnea: "*hs", ms: "hs", nr: null, mp: "hsh", wp: null, law: "23"}
+    - {pa: "*nl", pea: "*hr", psnea: "*hš", ms: null, nr: null, mp: null, wp: null, law: "24"}
+    - {pa: "*šk", pea: "*šk", psnea: null, ms: "sk", nr: "sk", mp: "sk, c", wp: "tch", law: "25"}
+    - {pa: "*θkw", pea: "*xkw", psnea: null, ms: null, nr: "sq", mp: "shq", wp: "sq", law: "26"}
+    - {pa: "*hp, *xp", pea: "*hp", psnea: "*hp", ms: "hp", nr: "hp", mp: "hp", wp: "hp", law: "15, 19"}
+    - {pa: "*nt", pea: "*nt", psnea: "*nt", ms: null, nr: null, mp: "t", wp: "t", law: "18"}
+    - {pa: "*nk", pea: "*nk", psnea: "*nk", ms: null, nr: null, mp: "k", wp: "k", law: "18"}
+
+table2_vowels:
+  columns: [PA, PEA, PSNEA, Ms, Nr, Mp, WP, Law]
+  notes:
+    system: >-
+      the PEA/PSNEA vowel notation carries the PEA system (two short vowels
+      *ǝ, *a; four long *ī, *ō, *ē, *ā) — the daughter cells are the attested
+      reflexes, whose own developments (e.g. shortened reflexes of PEA *ī) are
+      per-language. The *a· row's nasalized reflexes are the intrusive-nasal
+      development (Law 14); the *e· row carries the #107-adjudicated
+      chain-shift account; the unstressed *e/*a row's deletion environments
+      are stated in Law 16, not in the cells.
+  rows:
+    - {pa: "*a", pea: "*a", psnea: "*a", ms: "a", nr: "a", mp: "a", wp: "a", law: null}
+    - {pa: "*e", pea: "*ǝ", psnea: "*ǝ", ms: "a", nr: "a", mp: "u", wp: "ə / a", law: "4"}
+    - {pa: "*i, *i·", pea: "*ī", psnea: "*ī", ms: "i", nr: "i", mp: "i", wp: "i", law: "5"}
+    - {pa: "*o, *o·", pea: "*ō", psnea: "*ō", ms: "õ", nr: "oo", mp: "o", wp: null, law: "5"}
+    - {pa: "*a·", pea: "*ā", psnea: "*ā", ms: "ã·", nr: "ô", mp: "ô", wp: "ã·", law: "14"}
+    - {pa: "*e·", pea: "*ē", psnea: "*ē", ms: "â", nr: "â", mp: "á", wp: "a·", law: "#107"}
+    - {pa: "*e, *a (unstressed)", pea: "*ǝ, *a", psnea: null, ms: "ə", nr: null, mp: "Ø", wp: "Ø", law: "16"}
+
+table3_word_final:
+  columns: [Input, Change, Output, Law]
+  note: "the š/s alternation in row 4 is the Law 13 gradient reduction (language-particular detail in Law 13, not in the cells)."
+  rows:
+    - {input: "word-final V", change: "apocope", output: "Ø", law: "6, 16"}
+    - {input: "word-final *-kw", change: "retention", output: "-kw", law: "6"}
+    - {input: "word-final *m, *n, *w, *y syllables", change: "loss", output: "Ø", law: "6"}
+    - {input: "word-final PEA *r", change: "→ š / s", output: "š / s", law: "12, 13"}
+    - {input: "disyllables", change: "final-V loss", output: "Ø", law: "6"}
