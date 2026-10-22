@@ -1,0 +1,42 @@
+# Rule data of record: the Law-10 palatalization policy and the attested
+# trigger list.
+#
+# Extracted from the parent record:
+#   docs/research/pa-pea-psnea-sound-continuum.tex §1 Law 10 (Costa operative
+#   statement; Goddard §§ carried as superseded alternatives)
+#   docs/research/sound-law-rule-inventory.yaml (law-psnea-k-palatalization)
+# Costa operative: before PEA *ē and some instances of PA *i; the palatalized
+# *k appears as a palatal stop [tʲ] in Massachusett and Coweset, but as a
+# simple palatal in all other SNEA languages.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/pa-pea-psnea-sound-continuum.tex §1 Law 10 (parent record)"
+  reflex: "palatal stop [tʲ] in Massachusett and Coweset; simple palatal in all other SNEA languages"
+
+policy:
+  order:
+    - "1. the †-class exception routes (analogical_exceptions.yaml): a recorded †-class input does not palatalize via the law; the exception route is recorded (the override precedes the arms it overrides)"
+    - "2. the *ē arm: palatalization applies before PEA *ē unconditionally"
+    - "3. the attested trigger list: a PA *i-context *k whose form matches the recorded trigger classes palatalizes, cite recorded"
+    - "4. the unlisted *i-context *k: does NOT palatalize and flags (flag: law10-unlisted-i-context)"
+  superseded_alternative: "Goddard §39 (before PEA *e < PA *e- and *ye·) and §43 (Mass /aw/ < PEA *aw as an additional environment) — retained, never discarded"
+
+attested_trigger_list:
+  trigger_class: "PA *i-context (the *k directly followed by PA *i)"
+  instances:
+    - id: house
+      pa_form: "*wi·kiwa·Hmi"
+      context: "*kiwa"
+      outcome: "palatalized (paper Table 4: *wītīwāHm; Costa example (1): Ms ⟨wetu⟩, Nr ⟨wetu⟩, Pq ⟨weejoh⟩)"
+      cite: "Costa (1) citing Goddard 1982:26; paper Tables 4/6 house rows"
+    - id: chief
+      pa_form: "*sa·kima·wa"
+      context: "*kima"
+      outcome: "palatalized (paper Table 4: *sātīmāw; Costa example (1): Ms ⟨sontim⟩, Nr ⟨sâchim⟩)"
+      cite: "Costa (1) citing Goddard 1978:75; paper Tables 4/6 chief rows"
+  unlisted_note: >-
+    an *i-context *k not on this list does not palatalize and flags — the
+    list is the attested class, not a generalization (the conservative
+    discipline: gap-marked, never filled)

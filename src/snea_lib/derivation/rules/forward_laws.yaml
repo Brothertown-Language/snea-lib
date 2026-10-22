@@ -1,0 +1,261 @@
+# Rule data of record: the verified forward laws (paper §1, Laws 1-26).
+#
+# Extracted from the parent record:
+#   docs/research/sound-law-rule-inventory.yaml (the formalized law records,
+#   line-verified against the tracked source mirrors)
+#   docs/research/pa-pea-psnea-sound-continuum.tex §1 (the paper's numbered
+#   law statements)
+# Every law carries: the record's law id (record_id), the paper's numbering
+# (engine_id), the stage, the statement, the environment verbatim as the
+# record states it (gap-marked where the sources state none), and the cite.
+# The discipline class is the engine's dispatch key, grounded in the record's
+# own generator convention (Table 5 generator rules: only laws with stated,
+# environment-obligatory conditions take a step; optional/gradient rules are
+# not applied, noted instead; where no stated law gives a reflex, the value is
+# carried).
+#
+# Cites name parent-record paths; the record of record stays in the parent
+# store. No .md source-layer document feeds the engine.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  sources:
+    - "docs/research/sound-law-rule-inventory.yaml (parent record)"
+    - "docs/research/pa-pea-psnea-sound-continuum.tex §1 (parent record)"
+  notation:
+    V: vowel
+    C: consonant
+    R: "resonant (m n l r w y)"
+    S: "fricative (s š h)"
+    O: obstruent
+    "#": word boundary
+
+laws:
+  - engine_id: law-1
+    record_id: law-pa-theta-l-to-r
+    discipline: obligatory
+    stage: "PA -> pre-PEA"
+    statement: "PA *θ and PA *l fell together to *r (first step of the pre-PEA laryngeal-cluster reorganization)"
+    environment: "unconditioned merger (gap: no conditioning environment given in source)"
+    anchor: {path: "docs/research/sources/west-east-cline.txt (parent record)", lines: "243-247"}
+
+  - engine_id: law-2
+    record_id: law-pre-pea-laryngeal-clusters
+    discipline: obligatory
+    stage: "PA -> pre-PEA -> PEA"
+    statement: "PA *ʔθ -> pre-PEA *ʔx; PA *ʔl -> pre-PEA *ʔr; PA *hθ/*hl -> pre-PEA *hx; then pre-PEA *ʔx and *hx fell together to PEA *hx, and pre-PEA *ʔr gave PEA *hr"
+    environment: "not stated in source (gap: cluster-defined, no segmental conditioning stated)"
+    anchor: {path: "docs/research/sources/west-east-cline.txt (parent record)", lines: "243-247"}
+
+  - engine_id: law-3
+    record_id: law-pea-theta-r-merger
+    discipline: obligatory
+    stage: "PA -> PEA"
+    statement: "the θ/l merger completes at the PEA stage: PA *θ, *l, and retained *r correspond to PEA *r outside the cluster environments"
+    environment: "not stated as PEA-stage conditioning (gap: unconditioned outside clusters; cluster exceptions stated via the pre-PEA cluster laws)"
+    anchor: {path: "docs/research/sources/goddard-1981-mass-phonology.txt (parent record)", lines: "111-113"}
+
+  - engine_id: law-4
+    record_id: law-pea-e-to-schwa
+    discipline: obligatory
+    stage: "PA -> PEA"
+    statement: "PA *e > PEA *ǝ; with the high-vowel mergers and the long series this yields the PEA system (two short vowels *ǝ, *a; four long *ī, *ō, *ē, *ā — *ī < PA *i and *i·; *ō < *o and *o·; *ē < *e·; *ā < *a·)"
+    environment: "unconditioned for the *e shift as stated (gap: no segmental conditioning stated)"
+    anchor: {path: "docs/research/sources/goddard1980.txt (parent record)", lines: "579-590"}
+
+  - engine_id: law-5
+    record_id: law-pea-high-vowel-mergers
+    discipline: obligatory
+    stage: "PA -> PEA"
+    statement: "PA *i and *i· fall together to PEA *ī; PA *o· (and perhaps only secondary *o) falls together to PEA *ō — realized as merger into the long series, not shortening"
+    environment: "high vowels (stated); otherwise unconditioned (gap: no further conditioning stated in source)"
+    anchor: {path: "docs/research/sources/west-east-cline.txt (parent record)", lines: "559-572"}
+
+  - engine_id: law-6
+    record_id: law-pea-final-vowel-loss
+    discipline: edge
+    stage: "PA -> PEA"
+    statement: "word-final vowels are lost; the resulting word-final *-kw retains the *w; final vowels are lost in disyllables, even short-vowel disyllables; the daughter-side scope (Goddard 1981 §28): in word-final position PEA vowels and syllables ending in *m, *n, postvocalic *w, and *y are dropped"
+    environment: "word-final (stated); further conditioning not stated (gap: word-final position plus the disyllable extension, no phonological environment)"
+    anchor: {path: "docs/research/sources/goddard1980.txt (parent record)", lines: "686-693"}
+
+  - engine_id: law-7
+    record_id: ""
+    discipline: obligatory
+    stage: "PA -> PEA"
+    statement: "PA *y drops after a consonant, as in all of Eastern Algonquian"
+    environment: "/ C __ (stated)"
+    anchor: {path: "docs/research/sources/goddard-1981-mass-phonology.txt (parent record)", lines: "§14"}
+
+  - engine_id: law-8
+    record_id: ""
+    discipline: noted-not-applied
+    stage: "PA -> PEA"
+    statement: "PA *w usually drops after a long vowel; *w is generally retained after a consonant, exceptions unexplained"
+    environment: "/ V´ː __ (after a long vowel); 'usually' — not environment-obligatory in the record's reading"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Laws 8", lines: "§§11, 13"}
+
+  - engine_id: law-9
+    record_id: law-ea-sh-s-merger-before-final-sh
+    discipline: obligatory
+    stage: "PA -> PEA (merger)"
+    statement: "older PA *š > *s in all Eastern Algonquian north of Delaware-Mahican, before the new word-final *š phoneme is created by the word-final *r → š law"
+    environment: "areal (north of Delaware-Mahican); no segmental conditioning stated (gap)"
+    anchor: {path: "docs/research/sources/costa2007.txt (parent record)", lines: "322-324"}
+
+  - engine_id: law-10
+    record_id: law-psnea-k-palatalization
+    discipline: obligatory
+    stage: "PEA -> PSNEA"
+    statement: "palatalization of PA *k > *tʲ (palatal stop): before PEA *ē unconditionally (Costa operative) and in some instances of PA *i (the attested trigger classes — see law10_triggers.yaml); the palatalization occurs in the same places in all SNEA languages (Costa ll. 107-120); Goddard §39/§43 carried as the superseded alternative"
+    environment: "before PEA *ē and some instances of PA *i (stated, human-verified); the exact conditioning is notoriously difficult to define in Massachusett"
+    anchor: {path: "docs/research/sources/costa2007.txt (parent record)", lines: "104-106, 109-120"}
+
+  - engine_id: law-11
+    record_id: law-psnea-hr-hx-merger
+    discipline: obligatory
+    stage: "PEA -> PSNEA"
+    statement: "PEA *hr and *hx merge as PSNEA *hš — characteristic of all the SNEA languages and none of their neighbors, therefore a feature of PSNEA; inputs per Goddard §§24-25: PEA *hr < PA *ʔl, *nθ; PEA *hx < PA *hθ, *hl, *ʔθ"
+    environment: "not stated in source (gap: the merger stated as characteristic of all SNEA languages, no conditioning; post-merger reflex variation hš vs hs by language recorded)"
+    anchor: {path: "docs/research/sources/costa2007.txt (parent record)", lines: "104-106, 198-213"}
+
+  - engine_id: law-12
+    record_id: law-snea-final-r-to-sh
+    discipline: edge
+    stage: "PSNEA -> SNEA boundary"
+    statement: "word-final PEA *r > SNEA *š — all (and only) the SNEA languages share this rule; the devoicing-drag hypothesis explicitly marked as a hypothesis"
+    environment: "word-final /__ # (stated); the causal mechanism is a hypothesis, not an attested environment"
+    anchor: {path: "docs/research/sources/costa2007.txt (parent record)", lines: "104-106, 297-299, 318-321"}
+
+  - engine_id: law-13
+    record_id: law-snea-final-sh-gradient-reduction
+    discipline: never-applied
+    stage: "PSNEA -> SNEA (post-law, per-language)"
+    statement: "post-law gradient reduction: the new word-final *š sporadically > s in western/central SNEA — obligatory in Unquachog, normal though not universal in Loup, optional in Quiripi and Montauk, very rare in Pequot and Narragansett, nonexistent in Massachusett; runs parallel to hš > hs"
+    environment: "word-final (stated); gradient, language-particular"
+    anchor: {path: "docs/research/sources/costa2007.txt (parent record)", lines: "325-330"}
+
+  - engine_id: law-14
+    record_id: ""
+    discipline: obligatory
+    stage: "SNEA-wide (Goddard 1965)"
+    statement: "PA *N + stop clusters (*Np, *Nt, *Nč, *Nk) lose the nasal and associated vowels carry nasalization; the nasalized vowel is the reflex of PA *a· (Goddard 1971b adjudicates)"
+    environment: "after PA nasal + stop clusters; *a· > ã·"
+    anchor: {path: "docs/research/sources/goddard-1965 (parent record)", lines: "207-208"}
+
+  - engine_id: law-15
+    record_id: ""
+    discipline: cluster-cell
+    stage: "EA-wide"
+    statement: "the pre-PEA/PEA *hC clusters (hp, ht, hk, hš/hs, hč) are retained in SNEA; colonial recorders routinely fail to write preaspiration (only Edwards 1787 and Prince-Speck 1904 write it among the project's sources)"
+    environment: "preaspirated clusters (stated)"
+    anchor: {path: "Oxford cards (parent record)", lines: ""}
+
+  - engine_id: law-16
+    record_id: ""
+    discipline: daughter-side
+    stage: "daughter-stage detail (Secondary — Rudes 1997 §4.4 for Wampano; Goddard 1981a:68 for Massachusett)"
+    statement: "the vowel-deletion set beyond Laws 6-7: (i) apocope (word-final short vowels, all PA short vowels); (ii) aphaeresis — unstressed ə (< PA *e), typically not *a, lost in absolute word-initial position; (iii) syncope: (a) word-initial syllables between a resonant and a fricative (resonants devoiced), (b) noninitial syllables between a resonant and a non-fricative consonant, (c) noninitial syllables before a consonant cluster beginning with a fricative, (d) noninitial syllables between any consonant and a following fricative. In initial syllables an obstruent before the vowel blocks the loss. None of the five processes is stress-conditioned"
+    environment: "as stated per process (the record's taxonomy)"
+    anchor: {path: "docs/research/sources/rudes1997 (parent record) §4.4", lines: ""}
+    note: >-
+      The library's in-chain surface: the type-(iii-a) syncope only (grounded:
+      the three row's recorded PEA cell *nhxwi); the remaining processes are
+      daughter-stage detail and are never applied in-chain.
+
+  - engine_id: law-17
+    record_id: ""
+    discipline: contested-secondary
+    stage: "mainland Wampano (per-language)"
+    statement: "Rudes §§4.2-4.3: prevocalic *š reflex ⟨z/zz⟩ vs *s ⟨s/ss⟩ in Pierson's preverbal and root morphemes suggests the *š/*s contrast survived in mainland Wampano (as in Delaware-Mahican); the insular dialect lost it. Rudes rules the question unresolved. Against Costa Law 9 per the hierarchy: Costa's EA-wide statement is followed and the mainland-survival reading is carried as a language-particular contested note"
+    environment: "contested, secondary (stated as unresolved)"
+    anchor: {path: "docs/research/sources/rudes1997 (parent record) §§4.2-4.3", lines: ""}
+
+  - engine_id: law-18
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> daughter (Cunningham-adjusted)"
+    statement: "PA *nt > *t; PA *nk > *k — the nasal is lost with NO nasalized-vowel development (the Cunningham correction superseding Fielding's chart row; Delaware retains the nasal — non-SNEA calibration column)"
+    environment: "corrections to the Fielding chart (recorded as operative corrections)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 18", lines: ""}
+
+  - engine_id: law-19
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> daughter (Cunningham-adjusted)"
+    statement: "PA *hp, *xp > *hp — preaspiration retained in Mohegan-Pequot as hp, not cp (the Mohegan-Pequot instantiation of Law 15; the Cunningham correction superseding Fielding's cp)"
+    environment: "corrections to the Fielding chart (recorded as operative corrections)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 19", lines: ""}
+
+  - engine_id: law-20
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> PEA"
+    statement: "PA *θk, *xk, *ʔk > PEA *hk; in Massachusett written ⟨q⟩ when followed by /w/ (Goddard 1981 §15)"
+    environment: "cluster-defined (stated)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 20", lines: ""}
+
+  - engine_id: law-21
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> PEA"
+    statement: "PA *ht, *ʔt > PEA *ht"
+    environment: "cluster-defined (stated)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 21", lines: ""}
+
+  - engine_id: law-22
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> PEA"
+    statement: "PA *hč, *ʔč > PEA *hč"
+    environment: "cluster-defined (stated)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 22", lines: ""}
+
+  - engine_id: law-23
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> PEA"
+    statement: "PA *hs, *ʔs > PEA *hs"
+    environment: "cluster-defined (stated)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 23", lines: ""}
+
+  - engine_id: law-24
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PA -> PEA"
+    statement: "PA *nl > PEA *hr (probable) — Goddard 1981 §27 marks the Massachusett reflex problematical while the other Eastern languages point to PEA *hr"
+    environment: "cluster-defined (stated, 'probable' per the record)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 24", lines: ""}
+
+  - engine_id: law-25
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PEA -> daughters"
+    statement: "PA *šk > *sk (secondary, Fielding chart row: Mp sk, c; Delaware sk; Wampanoag tch; no primary-authority statement located)"
+    environment: "cluster-defined (stated; secondary)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 25", lines: ""}
+
+  - engine_id: law-26
+    record_id: ""
+    discipline: cluster-cell
+    stage: "PEA -> daughters"
+    statement: "PA *θkw > PEA *xkw — reflexes sq (Nr), shq (Mp), sq (WP) (secondary, per the Fielding chart row and the Trumbull table)"
+    environment: "cluster-defined (stated; secondary)"
+    anchor: {path: "docs/research/pa-pea-psnea-sound-continuum.tex (parent record) Law 26", lines: ""}
+
+  - engine_id: ordering-cline-context
+    record_id: ordering-cline-context
+    discipline: context
+    stage: "chain-level ordering context (PA -> PEA -> PSNEA -> SNEA)"
+    statement: "Divergence-depth context: the greatest time-depth in the family is in the west, the shallowest in the east; Eastern Algonquian is the shallowest layer and the only one that is a genetic subgroup"
+    environment: "not applicable (ordering context, not an environment-conditioned law)"
+    anchor: {path: "docs/research/sources/west-east-cline.txt (parent record)", lines: "559-572, 789-800"}
+
+  - engine_id: ordering-pre-pea-sequence
+    record_id: ordering-pre-pea-sequence
+    discipline: context
+    stage: "PA -> pre-PEA -> PEA"
+    statement: "pre-PEA ordering: PA *θ and *l first fell together to *r; the laryngeal-cluster developments follow; the PEA *hx and *hr mergers complete the sequence"
+    environment: "not stated in source (gap: relative chronology record)"
+    anchor: {path: "docs/research/sources/west-east-cline.txt (parent record)", lines: "243-247"}

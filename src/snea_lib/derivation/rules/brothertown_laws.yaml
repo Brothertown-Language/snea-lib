@@ -1,0 +1,91 @@
+# Rule data of record: candidate laws B1-B7 (PSNEA -> the hypothetical
+# Brothertown daughter), the tie-breaker ladder, and the admixture weights.
+#
+# Extracted from the parent record:
+#   docs/research/pa-pea-psnea-sound-continuum.tex §sec:brothertown-laws
+#   ("Candidate Laws: PSNEA to a Hypothetical Brothertown Daughter")
+#   §sec:brothertown-weights ("Admixture Weights for the Brothertown Blend")
+# Every candidate law is HYPOTHETICAL and PROVISIONAL (the record's own
+# marking), grounded in an attested daughter reflex of the PA->PSNEA chain
+# (selection, not averaging). The demonstrations are starred forms,
+# never attested.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/pa-pea-psnea-sound-continuum.tex §sec:brothertown-laws + §sec:brothertown-weights (parent record)"
+  status: "provisional; every law [hypothetical]; submitted for the linguist's validity review"
+
+weights:
+  demographic_evidential:
+    - {bloc: "Y-complex (Mohegan-Pequot-Montauk-Niantic)", demographic: 0.44, evidential: 0.55, combined: 0.24}
+    - {bloc: "Narragansett", demographic: 0.36, evidential: 0.30, combined: 0.11}
+    - {bloc: "Tunxis (+ Wangunk, if counted)", demographic: 0.18, evidential: 0.05, combined: 0.01}
+    - {bloc: "Wampanoag-area emigrants", demographic: null, evidential: 0.10, combined: null}
+  caveats: "the split/probable family attributions and the 1795 census's folding of Niantic families into the Narragansett count (~2% demographic, no evidential role)"
+  status: "provisional, print-sourced; adjudication gap-marked pending the project lead linguist"
+
+tie_breaker_ladder:
+  - step: 1
+    name: weighted-majority
+    rule: "the reflex carried by the bloc with the higher combined weight (demographic x evidential)"
+  - step: 2
+    name: attestation-density
+    rule: "if the weights tie, the reflex with the denser documentary record"
+  - step: 3
+    name: conservative-retention
+    rule: "if still tied, the reflex equal to the PSNEA value itself (the un-innovated side)"
+  - step: 4
+    name: contested
+    rule: "if still tied, the row is marked contested and referred to the linguist; no coin-flip, no averaging"
+
+ladder_note: >-
+  Under the actual weights, step 1 resolves every contested row in favor of
+  the Y-complex reflex (combined weight ~0.24 Y-complex vs ~0.11
+  Narragansett); under the equal-weight counterfactual, steps 1-2 tie and
+  step 3 selects the PSNEA-retaining form. The Wampanoag-area bloc can no
+  longer contend at step 1 — its minority variants rest on attestation alone.
+
+candidate_laws:
+  B1:
+    statement: "non-final PEA *r > y, selected automatically by weighted majority"
+    grounding: "Mp-Montauk/Niantic continue PEA *r as /y/; Narragansett (n-dialect) as /n/; Tunxis (Quiripi-type) as /r/; the combined weights (~0.24 vs ~0.11) leave no tie — no coin-flip, no averaging"
+    displaced_alternant: "the Narragansett n form is not co-generated: recorded where the sources attest it (the give paradigm's attested n doublet; Williams's own r/y doublets)"
+    demonstration: "PSNEA *wīpītar 'his teeth' > **wīpītay (selected); **wīpītan is the displaced alternant"
+    grounding_reflex: "Law 1/3 outputs and the Oxford-card dialect reflexes"
+  B2:
+    statement: "word-final PEA *r > š, with s as the Wampanoag-side minority variant"
+    grounding: "Law 12 (all-and-only SNEA, Costa ll. 297-299) delivers word-final š at PSNEA; the Law 13 gradient reduction to s is obligatory only in Unquachog — outside the founding set — so the Brothertown outcome is š with s as a minority variant from the late Wampanoag emigrants"
+    demonstration: "the inanimate plural PA *-ari > PSNEA *-ar > **-aš"
+  B3:
+    statement: "the hš/hs cluster surfaces as hš"
+    grounding: "Law 11 delivers PSNEA *hš; hš is the Massachusett-Coweset, Narragansett, Niantic, Mohegan-Pequot, and Naugatuck reflex — every founding bloc except the late Wampanoag emigrants (Unquachog-type hs)"
+    demonstration: "PA *neʔθwi > **nhšwi 'three'"
+  B4:
+    statement: "k-palatalization retained, with the Massachusett/Coweset palatal-stop realization as a minority variant"
+    grounding: "Law 10 is uniform across SNEA (Costa ll. 107-120); the realization splits — palatal stop [tʲ] in Massachusett-Coweset, simple palatal elsewhere; with the Y-complex dominant, the simple palatal dominates"
+    demonstration: "PA *wi·kiwa·Hmi 'house' > PSNEA *wītīwāHm > **wīcīwāHm-type forms"
+  B5:
+    statement: "syncope follows the Mohegan-Pequot patterns"
+    grounding: "Fielding's chart (as Cunningham-corrected) attests the Mohegan-Pequot deletion set (apocope, initial-syncope, medial rules); the Rudes taxonomy (Wampano) and the Massachusett rhythmic optional syncope are the competing patterns; evidential weight selects the Mohegan-Pequot patterns as the koine default, with the Rudes-type resonant+fricative syncope as a minority pattern"
+    demonstration: "PA *menahanwi 'island' > PSNEA *mǝnahan > **mǝnahan carried"
+    applications_status: >-
+      recorded applications (vowel-reduction recommendations) are
+      recommendations on record with pending-ratification flags
+      (b5_recommendations.yaml) — never treated as ratified
+  B6:
+    statement: "the intrusive nasal and preaspiration retention carry over unchanged"
+    grounding: "Laws 14 and 15 are SNEA-wide; no founding language lacks them; no selection arises"
+    demonstration: "PA *mete·hi 'heart' > **mǝtēh with preaspiration retained in the *hC clusters"
+  B7:
+    statement: "preaspirated-labial and nasal-loss corrections carry over as corrected"
+    grounding: "the Cunningham adjustments to Fielding's chart (Law 18: PA *nt > t, *nk > k with no nasalized-vowel development; Law 19: PA *hp/*xp > hp, preaspiration retained) apply to the dominant Mohegan-Pequot component and therefore to the koine"
+    demonstration: "**-aš after k/kw contexts behaves per the adjusted chart"
+
+equal_weight_counterfactual: >-
+  If each founding bloc were made equal in contribution, the sound laws
+  themselves would not change — laws are attested facts per language, not
+  averages — but every selection point with two or more attested reflexes
+  becomes contested: the y-dominance of B1 disappears and the koine becomes
+  doublet-riddled rather than y-shaped. Equal demographic weight is a
+  defensible counterfactual; equal evidential weight is meaningless (Tunxis).
