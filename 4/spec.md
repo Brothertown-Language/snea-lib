@@ -90,6 +90,9 @@ Content is injectable at every seam: vocabularies, palette contents, geometry-lo
 | SC-8 | Self-containment: the machinery's import graph holds only stdlib + machinery-package + pyside6-in-components; zero `derivation`/`bl_ipa`/parent-repo imports | structural | a source-walking pytest structural test asserting the import set; `uvx pyright src/` clean |
 | SC-9 | The charter amendment is present in `README.md` and `AGENTS.md`, naming shared research/workflow machinery and non-SNEA usability | structural | content check on both files for the amended paragraph |
 | SC-10 | The runbook citation is present in the model layer's provenance text, naming the runbook path | structural | content check for `docs/runbooks/ocr-sourcing-proofing.md` in the model package/README |
+| SC-11 | The anti-hard-bind prohibition has a source-content instrument: the machinery sources carry no parent-repo path literals (`eliot-tritext`, `tmp/ocr`, `leafmaps`) and no store-schema names, beyond the import-graph check | structural | the source-walking pytest structural test asserting the name classes' absence in `snea_lib.proofing` sources |
+| SC-12 | Failure-time live capture is exercised: a deliberate-failure or helper-driven case produces the `FAILURE-*.png` capture exactly as the reference posture does | behavioral | the UI suite contains a failure-capture case; run it and assert the capture artifact |
+| SC-13 | The posture's consumer-adoption documentation exists: the README names the shared fixtures (`ui_shot`, managed display, failure capture) and the adoption route | structural | content check on README.md for the posture section |
 
 ## 6. Out of scope
 
