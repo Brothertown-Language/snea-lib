@@ -17,3 +17,7 @@ private/
 # Environment
 .env
 .DS_Store
+
+# Local issues worktree (orphan issues-data branch) — a worktree, never tracked
+# in the parent tree
+.issues/
