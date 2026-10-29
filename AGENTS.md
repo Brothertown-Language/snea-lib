@@ -4,8 +4,11 @@
 <!-- SPDX-License-Identifier: MIT -->
 
 Shared Python machinery for SNEA/PA/PEA/PSNEA projects — derivation engines,
-orthography/IPA tooling, and shared research-data utilities. Project-specific
-applications live in the consuming repos.
+orthography/IPA tooling, proofing/review machinery, and shared research-data
+utilities. The machinery layer admits research/workflow machinery beyond the
+SNEA family (the machinery serves any derived text layer); project-specific
+applications still live in the consuming repos — the applications boundary
+stands (snea-lib#4 §3.5).
 
 ## Consumption
 
