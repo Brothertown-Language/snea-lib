@@ -4,8 +4,24 @@ Shared Python machinery for SNEA/PA/PEA/PSNEA projects — derivation engines,
 orthography/IPA tooling, and shared research-data utilities. Project-specific
 applications live in the consuming repos.
 
-**Charter boundary**: this repo holds general SNEA/PA/PEA/PSNEA machinery; it
-does not hold project-specific applications. Consumers mount it as a git
+**Charter boundary**: this repo holds general SNEA/PA/PEA/PSNEA machinery and
+shared research/workflow machinery usable beyond the SNEA family (snea-lib#4's
+proofing machinery serves any derived text layer); it does not hold
+project-specific applications — wired applications stay in consuming repos.
+
+## The proofing machinery (`snea_lib.proofing`)
+
+The OCR-sourcing proofing machinery (snea-lib#4): the runbook's locator space
+and record semantics (`proofing.model`), the review core over text- and
+image-anchored subjects with injected vocabularies and register writers
+(`proofing.review`), and the extra-gated GUI components (`proofing.widgets`,
+pyside6 via `[proofing]`). The UI test posture ships as reusable fixtures in
+`test/conftest.py` — the managed display (Xvfb at 1080p; ``SNEA_UI_SCREEN=4k``
+for 4K; offscreen fallback), the per-operation ``ui_shot`` capture with its
+failure-time live capture, and the ``proofing_ui`` pytest marker (self-skipping
+with ``uv sync --extra proofing`` when unprovisioned). Consumer adoption: mount
+the library, declare the same marker, and consume the shared fixtures from the
+conftest-by-reference pattern. Consumers mount it as a git
 submodule (corpus-style) and record the mounted pointer; pointer updates are
 explicit, named parent-repo changes.
 
