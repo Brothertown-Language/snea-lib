@@ -8,8 +8,9 @@ Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
 from __future__ import annotations
 
 import re
+from collections.abc import Callable
 from dataclasses import dataclass
-from typing import Any, Callable, Protocol
+from typing import Any, Protocol
 
 from .model import LocatorError
 
@@ -94,15 +95,25 @@ def verdict(
 
 def _anchor_ok(subject: TextAnchor | ImageAnchor) -> None:
     if isinstance(subject, TextAnchor):
-        from .model import _validate_text
+        # per-consumer keys: the review core's text anchors are opaque
+        # register keys to the machinery (an item id, a locator, a key)
+        # — locator-shaped strings validate through the locator space,
+        # everything else passes untouched
+        import re as _re
 
-        _validate_text(subject.locator)
-    elif isinstance(subject, ImageAnchor):
-        _ = subject.page, subject.region
-        if not re.search(r"\.(png|jpg|jpeg|tif|tiff)$", subject.page, re.I):
+        from .model import LocatorError, _validate_text
+
+        loc = subject.locator
+        if not loc.strip():
+            raise LocatorError("text anchor: empty locator/key")
+        if _re.fullmatch(r"\d+", loc) or _re.fullmatch(r"\d+-\d+", loc):
+            _validate_text(loc)
+        return
+    if isinstance(subject, ImageAnchor):
+        if not re.search(r"\.(png|jpg|jpeg|tif|tiff)$", subject.page, _re.IGNORECASE):
             raise LocatorError(f"page image {subject.page!r}: not a page-image path")
-    else:
-        raise LocatorError("subject: not a text anchor nor an image anchor")
+        return
+    raise LocatorError("subject: not a text anchor nor an image anchor")
 
 
 class InMemoryRegister:
