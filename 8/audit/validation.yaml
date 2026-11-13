@@ -1,0 +1,39 @@
+# Validation record — snea-lib#8 (spec)
+# One entry per fresh-context validation cycle.
+
+spec:
+  - round: 1
+    date: 2026-11-13
+    reviewer: fresh-context dispatch (general sub-agent, no prior context)
+    verdict: FAIL
+    findings:
+      - class: fabricated-claims
+        detail: observed-failure sentence claimed the lockstep fails on the law-20/25/26 statements; executed check shows only the four forward-table cells fail (laws 18-26 carry record_id "" and are outside the statement loop)
+        remediation: sentence rewritten to the executed observation; the statement-coverage gap disclosed
+      - class: incapable-instrument
+        detail: R-2's statement agreement had no instrument able to detect its failure (green runs pass unchanged)
+        remediation: read-against-tex verification stated explicitly (R-2 + SC-3)
+      - class: blast-radius + internal-contradiction
+        detail: reversed_rules.yaml's four-way inv-Mp-hsh is invalidated by the corrections but outside the stated scope; SC-3's grep would flag it
+        remediation: reversed_rules.yaml added to scope; R-4/SC-1 carry the inverse-set fix mirroring the parent record
+      - class: ambiguous-criterion
+        detail: SC-1's "both tests" unresolved (the lockstep file carries six test functions)
+        remediation: the two active tests named explicitly; the three strict-xfail tests' status stated
+    repo_boundary:
+      scope_containment: pass (snea-lib/ prefix only; pin bump routed as the #175 ride-along)
+      home_containment: pass (filed in snea-lib/.issues/8/)
+  - round: 2
+    date: 2026-11-13
+    reviewer: fresh-context dispatch (general sub-agent, no prior context)
+    verdict: PASS
+    findings: []
+    adjudicated:
+      - class: fabricated-claims spot-check
+        classification: preference
+        note: all current-state and historical claims verified live (file contents, record_id values, parent record, commit e5aef19, executed test run, tex prose)
+      - class: either/or check (SC-2's pre-existing-red branch)
+        classification: preference
+        note: judged deterministic trunk-baseline comparison, not implementer choice
+    repo_boundary:
+      scope_containment: pass
+      home_containment: pass
