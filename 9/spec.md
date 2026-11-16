@@ -45,7 +45,7 @@ A sound change law is a regular, environment-obligatory statement; no derivation
 | SC-2 | The engine's derivation is deterministic | behavioral | derivation re-run + identical-inputs second run (`pytest` fixture); output equality asserted |
 | SC-3 | Corrected outputs carry law bases; the person-root chain yields the law-applied form under the stated environments | structural | engine build-output diff + the outputs' law-basis fields |
 | SC-4 | The enforcing test suite passes under the corrected semantics, with every retired-semantics test updated in the same cycle | behavioral | `uv run pytest test/` green; retired-semantics tests deleted or rewritten to the corrected behavior |
-| SC-5 | Review marks (hypothetical/provisional) persist as machine-readable statuses in rule data and outputs | structural | rule-data/flag audit — marks present in `forward_laws.yaml` B-series entries and carried by outputs |
+| SC-5 | Review marks (hypothetical/provisional) persist as machine-readable statuses in rule data and outputs | structural | rule-data/flag audit — marks present in the B-series entries of `src/snea_lib/derivation/rules/brothertown_laws.yaml` (and B5's application rows in `b5_recommendations.yaml` where marked) and carried by outputs |
 
 ## Acceptance framing
 
@@ -64,7 +64,7 @@ A sound change law is a regular, environment-obligatory statement; no derivation
 2. **SC-2** — the derivation tooling's own test fixture runs a worked chain twice on identical inputs; the outputs compare identical.
 3. **SC-3** — the chain's build outputs diffed against the prior recorded outputs; every changed output carries its law basis; the person-root row's corrected form identified.
 4. **SC-4** — the enforcing suite runs green under the corrected semantics: `uv run pytest test/`; every retired-semantics test either rewritten to assert corrected behavior or deleted with the behavior's replacement covered.
-5. **SC-5** — read of the B-series entries in `forward_laws.yaml` + the output status fields: hypothetical/provisional marks present.
+5. **SC-5** — read of the B-series candidate-law entries in `src/snea_lib/derivation/rules/brothertown_laws.yaml` (the B-series home — forward_laws.yaml carries only Laws 1–26 + ordering entries), plus B5's application rows in `b5_recommendations.yaml` and the outputs' status fields: hypothetical/provisional marks present.
 
 ## Edge cases & boundary conditions
 
