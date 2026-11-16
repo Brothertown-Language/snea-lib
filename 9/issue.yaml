@@ -1,0 +1,8 @@
+title: 'Fix spec: derivation engine applies laws deterministically — retire noted-not-applied
+  (Law 13/16) from engine + rule data; enforcing tests updated; corrected build outputs'
+status: open
+labels:
+- needs-approval
+body: ''
+created_at: '2026-11-16T03:15:19+00:00'
+updated_at: '2026-11-16T03:15:19+00:00'
