@@ -1,0 +1,13 @@
+spec:
+  artifact: snea-lib#9/spec.md
+  rounds:
+    - round: 1
+      date: 2026-11-15
+      verdict: FAIL
+      reviewer: fresh-context dispatch (no prior context on the spec)
+      findings:
+        - class: incapable instrument (class 5) with the mis-citation grounded in the fabricated-claims family
+          ground: SC-5's instrument targeted "forward_laws.yaml B-series entries" — that file carries only Laws 1–26 + ordering entries; the B-series candidate laws and their provisional/hypothetical status marks live in src/snea_lib/derivation/rules/brothertown_laws.yaml (status strings at its ll. 17, 26) plus B5's application rows in b5_recommendations.yaml; an implementation stripping the marks from the actual B-series home would have passed the audit as written
+          classification: finding
+          remediation: SC-5's instrument retargeted to brothertown_laws.yaml (B-series entries) + b5_recommendations.yaml rows + output status fields
+      loop-state: continue — round 2 dispatched on the revised artifact
