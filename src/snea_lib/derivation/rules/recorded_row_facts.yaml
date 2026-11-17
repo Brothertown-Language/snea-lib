@@ -1,0 +1,43 @@
+# Rule data of record: the recorded y-koine row facts — the chains whose
+# BL outcomes the register records as the *y-drop (snea-lib#10; consumer
+# spec snea-phonetics#184, the developer's 2026-11-17 y-koine directive).
+#
+# The pronoun chains are the recorded rows: PSNEA *nīy → nī, *kīy → kī
+# (PA *nīθa/*kīθa, y-dialect; the *y-drop, not a lost *n; the donor
+# ⟨Neèn⟩/⟨Keèn⟩ attestations are the etymon's corroboration, never the BL
+# form's source shape), realized ⟨ni⟩/⟨ki⟩ and corroborated by the modern
+# comparison side.
+#
+# Mechanism class: the *-ali row's recorded PSNEA apocope
+# (_edge_apocope's pure-inflection arm) — a drop recorded AT THE ROW,
+# applied where the chain states it. NOT a general law: Law 6's in-chain
+# retention of word-final *m/*n/*y is itself a recorded decision (the
+# house row) and stands; no law table changes.
+#
+# An application applies only via its recorded entry, keyed on the row's
+# PSNEA stage shape (the engine's r-final PSNEA reading and the register's
+# y-final citation — the same row, the y-dialect's recorded reading) or on
+# the recorded class keys the input declares. Every application carries a
+# trace entry citing the recorded row.
+#
+# Co-authored with AI: OpenCode (huggingface/zai-org/GLM-5.3-Flash)
+
+meta:
+  source: "docs/research/data/bt-starter-lexicon.yaml (parent register: the recorded pron chains) + the developer's y-koine directive, 2026-11-17 (snea-phonetics#184)"
+  status: "recorded rule of record — ruled, not pending"
+
+row_facts:
+  - id: pron-1s-y-drop
+    lexicon_entry: pron-1s
+    application: "the *y-drop at the BL leg: the y-dialect's recorded *y reading of the row's r-reflex drops word-final, realizing the recorded chain *nīy > nī (⟨ni⟩)"
+    applies_to_psnea: ["*nīr", "*nīy"]
+    recorded_bl: "ni"
+    recorded_ipa: "ˈniː"
+    cite: "bt-starter-lexicon.yaml#pron-1s (derivation: PSNEA *nīy → nī)"
+  - id: pron-2s-y-drop
+    lexicon_entry: pron-2s
+    application: "the *y-drop at the BL leg: the y-dialect's recorded *y reading of the row's r-reflex drops word-final, realizing the recorded chain *kīy > kī (⟨ki⟩)"
+    applies_to_psnea: ["*kīr", "*kīy"]
+    recorded_bl: "ki"
+    recorded_ipa: "ˈkiː"
+    cite: "bt-starter-lexicon.yaml#pron-2s (derivation: PSNEA *kīy → kī)"

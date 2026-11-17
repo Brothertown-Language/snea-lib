@@ -655,6 +655,12 @@ class ChainEngine:
         out: list[Seg] = []
         b2_applied = False
         last_kind = pieces[-1][0]
+        # the recorded y-koine row facts (snea-lib#10): a drop recorded AT
+        # THE ROW (the *-ali precedent's mechanism class), applied where
+        # the chain states it — never a general law (Law 6's in-chain
+        # retention of final *m/*n/*y is itself a recorded decision).
+        row_drop = self._recorded_y_drop_row(inp, stage_forms_psnea_string)
+        row_drop_taken = False
         for i, seg in enumerate(segs):
             if seg.sym == BOUNDARY:
                 out.append(seg)
@@ -663,6 +669,12 @@ class ChainEngine:
                 word_final = self._parse_word_final(segs, i)
                 bounded = i + 1 < len(segs) and segs[i + 1].sym == BOUNDARY
                 if word_final and (len(pieces) == 1 or (seg.component == last_kind and last_kind in ("final", "inflection"))):
+                    if row_drop is not None:
+                        # the row's recorded *y reading drops word-final
+                        # (the *y-drop: the recorded chain *nīy > nī) —
+                        # superseding B2's š for this recorded row
+                        row_drop_taken = True
+                        continue
                     out.append(Seg("š", seg.palatal, seg.component))
                     b2_applied = True
                 elif bounded:
@@ -685,6 +697,24 @@ class ChainEngine:
                 TraceEntry("BL", "B2", _BT_LADDER_CITE, serialize(out, "BL"),
                            note="B2 word-final *r > š (the displaced s is the Law-13 gradient, never applied)")
             )
+        if row_drop is not None:
+            # the y-final citation route: the register's *nīy/*kīy forms
+            # arrive with the final *y still present — the same recorded
+            # drop applies word-final (one recorded-fact entry per
+            # derivation)
+            final_idx = next(
+                (j for j in range(len(out) - 1, -1, -1) if out[j].sym != BOUNDARY),
+                -1,
+            )
+            if final_idx >= 0 and out[final_idx].sym == "y" and self._parse_word_final(out, final_idx):
+                out.pop(final_idx)
+                row_drop_taken = True
+            if row_drop_taken:
+                trace.append(
+                    TraceEntry("BL", "y-koine-recorded-drop", str(row_drop["cite"]),
+                               serialize(out, "BL"),
+                               note=f"{row_drop['id']}: {row_drop['application']}")
+                )
         # B7: the Cunningham-corrected nasal-loss rows carry corrected
         # (PA *nt > t, *nk > k with no nasalized-vowel development)
         b7_applied = False
@@ -725,6 +755,22 @@ class ChainEngine:
             )
             flags.append(Flag("law13-never-applied", "partial", cite13))
         return out
+
+    # -- the recorded y-koine row facts ---------------------------------------
+    def _recorded_y_drop_row(
+        self, inp: ChainInput, stage_forms_psnea_string: str
+    ) -> dict | None:
+        """The recorded row fact matching this derivation, if any: keyed
+        on the row's PSNEA stage shape (the engine's r-final reading and
+        the register's y-final citation are the same recorded row) or on
+        the recorded class keys the input declares. Returns the record
+        (with its id/application/cite) or None."""
+        facts = self.rules.get("recorded_row_facts", {})
+        for rec in facts.get("row_facts", []):
+            targets = rec.get("applies_to_psnea", [])
+            if stage_forms_psnea_string in targets or rec["id"] in inp.cls:
+                return rec
+        return None
 
     # -- geometry helpers ----------------------------------------------------------
     @staticmethod
