@@ -15,6 +15,8 @@ cites back to their record paths):
 - ``law10_triggers`` — the attested Law-10 trigger list
 - ``analogical_exceptions`` — the †-class exception data
 - ``b5_recommendations`` — recorded B5 applications (pending ratification)
+- ``recorded_row_facts`` — the recorded y-koine row facts (the *y-drop rows,
+  ruled; snea-lib#10)
 - ``reversed_rules`` — per-daughter inverses, source registry, reconciliation
 - ``bl_rendering`` — phoneme-to-letter map and recorded special renderings
 
@@ -37,6 +39,7 @@ _TABLE_NAMES: tuple[str, ...] = (
     "law10_triggers",
     "analogical_exceptions",
     "b5_recommendations",
+    "recorded_row_facts",
     "reversed_rules",
     "bl_rendering",
 )
